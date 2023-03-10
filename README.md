@@ -1,2 +1,2 @@
 # Custoem-carousel
-This is a custome caraousel made with React.js &amp; Tailwind CSS.
+This is a custom caraousel made with React.js &amp; Tailwind CSS.
