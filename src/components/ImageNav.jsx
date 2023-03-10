@@ -1,5 +1,3 @@
-
-
 const ImageNav = ({ totalImages, currentPage, setCurrentImageHandler }) => {
   const renderedImageNav = new Array(totalImages).fill(" ").map((_, index) => {
     return (
@@ -15,14 +13,8 @@ const ImageNav = ({ totalImages, currentPage, setCurrentImageHandler }) => {
       </div>
     );
   });
-  
-  return <div className="flex flex-row m-4">
-    
 
-    {renderedImageNav}
-  
-
-  </div>;
+  return <div className="flex flex-row m-4">{renderedImageNav}</div>;
 };
 
 export default ImageNav;
