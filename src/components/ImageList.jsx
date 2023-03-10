@@ -8,22 +8,35 @@ const ImageList = ({ imageLists }) => {
   const [totalImages, setTotalImages] = useState(0);
 
   useEffect(() => {
-    if (imageLists.length > 0) {
+    if (imageLists?.length > 0) {
       setTotalImages(imageLists?.length);
       setCurrentImage(imageLists?.[0]);
     }
   }, [imageLists]);
 
   const setCurrentImageHandler = (data) => {
-
-    console.log(data);
     setCurrentImage(imageLists[data]);
     setCurrentPage(data);
   };
 
+  if (imageLists?.length === 0) {
+    return (
+      <div className="flex flex-col  items-center">
+        <p> No Images Found. Please try it again </p>
+      </div>
+    );
+  }
+
   return (
     <div className="flex flex-col  items-center">
-      {currentImage && <ImageCard {...currentImage} setCurrentImageHandler={setCurrentImageHandler} totalImages={totalImages} currentPage={currentPage} />}
+      {currentImage && (
+        <ImageCard
+          {...currentImage}
+          setCurrentImageHandler={setCurrentImageHandler}
+          totalImages={totalImages}
+          currentPage={currentPage}
+        />
+      )}
       <ImageNav
         totalImages={totalImages}
         currentPage={currentPage}
